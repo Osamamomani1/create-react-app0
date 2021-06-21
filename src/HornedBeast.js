@@ -1,13 +1,35 @@
 import React, { Component } from 'react'
-
+import { Card } from 'react-bootstrap';
 export class HornedBeast extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      vote:0
+    }
+  }
+  voteRaise=()=>{
+    this.setState({
+      vote:this.state.vote +1
+    })
+  }
     render() {
         return (
-            <div>
-              <h2>UniWhal</h2> 
-                <img src="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"/>
-              <p>A unicorn and a narwhal nuzzling their horns</p>  
-            </div>
+          <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={this.props.image_url} onClick={this.voteRaise} />
+  <Card.Body>
+    <Card.Title>{this.props.title}</Card.Title>
+    <Card.Text>
+    {this.props.description}
+    </Card.Text>
+    <span><i class="far fa-heart">{this.state.vote}</i></span>
+  </Card.Body>
+</Card>
+            // <div>
+            //   <h2>{this.props.title}</h2> 
+            //     <a onClick={this.voteRaise}><img src={this.props.image_url} width='300px'/></a>
+            //     <span><i class="far fa-heart">{this.state.vote}</i></span>
+            //   <p>{this.props.description}</p>  
+            // </div>
         )
     }
 }

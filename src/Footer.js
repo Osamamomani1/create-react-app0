@@ -4,7 +4,9 @@ export class Footer extends Component {
     render() {
         return (
             <div>
-               <p>@Coppyright 2021,ASAC</p> 
+                <footer>
+               <p> &copy; 2021,OsamaMomani</p> 
+               </footer>
             </div>
         )
     }

@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap';
+import { Card,Button } from 'react-bootstrap';
+import { SelectedBeast } from './SelectedBeast';
+
 export class HornedBeast extends Component {
   constructor(props){
     super(props);
     this.state={
       vote:0
     }
+
+    
   }
   voteRaise=()=>{
     this.setState({
@@ -22,6 +26,14 @@ export class HornedBeast extends Component {
     {this.props.description}
     </Card.Text>
     <span><i class="far fa-heart">{this.state.vote}</i></span>
+    
+    <SelectedBeast
+    title={this.props.title}
+    image_url={this.props.image_url}
+    description={this.props.description}
+    vote={this.state.vote}
+    />
+    
   </Card.Body>
 </Card>
             // <div>

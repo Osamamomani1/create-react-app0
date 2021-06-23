@@ -46,7 +46,7 @@ render (){
             <Modal.Header closeButton>
               <Modal.Title>{this.props.title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body><img src={this.props.image_url} width='500px'/>
+            <Modal.Body><img src={this.props.image_url} width='400px'/>
             <p>{this.props.description}</p> 
             <span><i class="far fa-heart">{this.props.vote}</i></span>
             </Modal.Body>
